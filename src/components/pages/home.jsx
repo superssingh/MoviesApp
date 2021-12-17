@@ -36,19 +36,6 @@ const Home = () => {
       <div>Username: {currentUser.name}</div>
       <div className="home">
         <MoviesList movies={movies} count={movies.length} />
-
-        {/* <PaginationBar
-          itemCount={count}
-          pageSize={pageSize}
-          currentPage={1}
-          onPageChange={handlePageChange}
-        />
-
-        <VideoPlayer
-          trailerLink={videoLink}
-          status={videoStatus}
-          handleVideoClose={handleVideoClose}
-        /> */}
       </div>
     </div>
   );

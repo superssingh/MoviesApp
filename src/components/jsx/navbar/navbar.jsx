@@ -29,7 +29,7 @@ const NavBar = () => {
             <li>
               {TagName.menus.map((m) => {
                 return (
-                  <NavLink to={m.path} key={m.name} tabindex="1">
+                  <NavLink to={m.path} key={m.name} tabIndex="1">
                     {m.name}
                   </NavLink>
                 );

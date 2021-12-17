@@ -18,12 +18,13 @@ const MovieDetails = (props) => {
       setMovie(selectedMovie[0]);
       handleVideo(id);
     }
-
-    fetchData(id, abortController.signal);
+    if (id) {
+      fetchData(id, abortController.signal);
+    }
     return function cleanup() {
       abortController.abort();
     };
-  }, []);
+  }, [id, movies]);
 
   const handleVideo = async (id) => {
     const { data } = await axios.get(TagNames.getVideoKey(id));
@@ -65,15 +66,17 @@ const MovieDetails = (props) => {
               <h4>Rating: {movie.vote_average}/10</h4>
               <h4>Language: {movie.original_language.toUpperCase()}</h4>
             </div>
-            <div className="videoPlayer">
-              <iframe
-                src={videoLinK}
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              ></iframe>
-            </div>
+            {videoStatus && (
+              <div className="videoPlayer">
+                <iframe
+                  src={videoLinK}
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            )}
           </div>
         </div>
       )}

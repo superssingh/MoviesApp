@@ -1,12 +1,12 @@
 import React from "react";
 import Form from "../jsx/form";
 import Joi from "joi-browser";
-import Notes from "../js/Notes";
+// import Notes from "../js/Notes";
 // const create_username_pattern = "^[a-zA-Z0-9_]+$"; // username with lowerUpper alfanumeric and _ only.
 // const create_password_pattern =
 //   "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[#$^+=!*()@%&])";
 
-import { TextField } from "@mui/material";
+// import { TextField } from "@mui/material";
 
 class LoginForm extends Form {
   state = {
