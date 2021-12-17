@@ -1,0 +1,58 @@
+$height: 4em;
+//-------color
+$primaryColor: linear-gradient(-90deg, #313131d9, #19ff8c, #303030ee);
+
+$primaryDarkColor: linear-gradient(90deg, #ffffffd3, #dfdfdfea, #555454bf);
+$secondaryColor: linear-gradient(-90deg, #044322, #23ff77, #044322);
+$secondaryDarkColor: linear-gradient(45deg, #23fc59, #044322, #0edf5e, #088544);
+
+$whiteColor: rgba(252, 252, 252, 0.981);
+$GlassColor: rgba(255, 255, 255, 0.692);
+$grayColor: rgb(75, 75, 75);
+$blackColor: rgb(9, 9, 9);
+$blackGlassColor: linear-gradient(-90deg, #010101c6, #0c0c0cdd, #090909ad);
+$cardColor: linear-gradient(0deg, #c2c2c2, #fffffff1, #fffffff3);
+$transparentGlassColor: rgba(105, 103, 103, 0.584);
+$transparentWhiteColor: linear-gradient(45deg, #ffffffcf, #ffffffc2, #d2d2d2de);
+$GradientWhiteColor: linear-gradient(90deg, #666565b7, #ffffff, #646262d5);
+$GradientGreenColor: linear-gradient(90deg, #08164f, #0cff96, #15086b);
+$GradientRedColor: linear-gradient(90deg, #1b1b1b, #e205a4, #26086b);
+$navBarColor: $GlassColor;
+$mobileNavColor: $navBarColor;
+$menusColors: $GradientWhiteColor;
+$menusTextColors: $grayColor;
+$bodyColor: rgb(73, 73, 73);
+
+$mintColor: rgba(184, 255, 240, 0.87);
+//---------color options ----
+$greenLightColor: rgba(7, 162, 95, 0.981);
+$primaryGreenColor: linear-gradient(-90deg, #250438, #0daa73, #1e032e);
+$aquaColor: rgb(12, 155, 155);
+$transparentPurple: rgba(9, 9, 9, 0.838);
+$purpleMixedColor: linear-gradient(
+  327deg,
+  rgba(8, 13, 112, 0.9270062869822485) 5%,
+  rgba(83, 18, 215, 1) 52%,
+  rgba(151, 46, 235, 0.958420868347339) 99%
+);
+$gradient3Color: linear-gradient(45deg, #5f3b81, #341368ef, #110430);
+$gradient2Color: linear-gradient(45deg, #0d7275 50%, #0a2879 50%);
+$tealGradient3Color: linear-gradient(-90deg, #031d2e, #0c9196, #02383f);
+$purpleGradient3Color: linear-gradient(-90deg, #1e032e, #8d3599, #1e032e);
+$gradientGlassColor: linear-gradient(
+  -90deg,
+  rgba(246, 246, 245, 0.2),
+  rgba(122, 121, 124, 0.2)
+);
+
+$gradientGlassDarkColor: linear-gradient(
+  -90deg,
+  rgba(34, 34, 33, 0.6),
+  rgba(26, 24, 24, 0.6)
+);
+
+$gradientWhiteBlack: linear-gradient(
+  90deg,
+  rgba(239, 240, 238, 0.2),
+  rgba(33, 32, 32, 0)
+);

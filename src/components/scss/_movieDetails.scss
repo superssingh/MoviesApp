@@ -1,0 +1,89 @@
+.MovieDetail {
+  .back-cover {
+    z-index: -1;
+    display: grid;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+  }
+  .MovieInfo {
+    display: grid;
+    position: absolute;
+    width: 100%;
+    margin: 18rem 0rem 5rem 0rem;
+    padding: 5em 2em;
+    height: fit-content;
+    background: $blackGlassColor;
+    justify-items: center;
+    backdrop-filter: blur(1.5rem);
+
+    h1 {
+      padding: 12px;
+      font-size: 1.5em;
+      font-weight: bold;
+      color: white;
+    }
+    .front-cover {
+      margin-top: -12em;
+      border-radius: 5px;
+      width: 80%;
+      max-width: 750px;
+      box-shadow: 0px 1px 5px 2px rgba(0, 0, 0, 0.92);
+    }
+    .overview {
+      display: grid;
+      max-width: 50em;
+      margin: 1em 0;
+
+      backdrop-filter: blur(2rem);
+
+      h5 {
+        margin-top: -1em;
+        padding: 10px 15px;
+        font-size: 1.2em;
+        color: whitesmoke;
+        justify-self: flex-start;
+        background: $GradientRedColor;
+        border-radius: 0 50% 50% 0;
+      }
+      p {
+        padding: 1em 2em;
+        color: rgb(193, 192, 192);
+        line-height: 1.5;
+        font-size: 1em;
+      }
+    }
+    div {
+      display: flex;
+      position: relative;
+      h4 {
+        width: fit-content;
+        padding: 10px 20px;
+        margin: 5px;
+        color: #fff;
+        background: $GradientRedColor;
+        border-radius: 50%;
+      }
+    }
+    .videoPlayer {
+      margin-top: 10px;
+      display: flexbox;
+      width: 100%;
+      height: 100%;
+      justify-content: center;
+      iframe {
+        width: 560px;
+        height: 340px;
+      }
+
+      @include media("<tablet") {
+        iframe {
+          width: 360px;
+          height: 240px;
+        }
+      }
+    }
+  }
+}
