@@ -14,13 +14,18 @@ const MovieDetails = (props) => {
 
     async function fetchData(id, { signal }) {
       // You can await here
-      const selectedMovie = await movies.filter((m) => m.id === parseInt(id));
-      setMovie(selectedMovie[0]);
-      handleVideo(id);
+      try {
+        const selectedMovie = await movies.filter((m) => m.id === parseInt(id));
+        setMovie(selectedMovie[0]);
+        handleVideo(id);
+      } catch (ex) {
+        console.log("Error: ", ex);
+      }
     }
     if (id) {
       fetchData(id, abortController.signal);
     }
+
     return function cleanup() {
       abortController.abort();
     };
