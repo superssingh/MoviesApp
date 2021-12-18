@@ -152,7 +152,7 @@ table {
   position: fixed;
   width: 100%;
   height: wrap;
-  top: 0;
+  top: 1;
 }
 
 .Navigation div {
@@ -167,7 +167,8 @@ table {
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  height: 4em;
+  height: 4.5em;
+  top: 0;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -180,6 +181,8 @@ table {
   background: rgba(255, 255, 255, 0.692);
   -webkit-box-shadow: 0px 0.5px 2px 0px rgba(231, 230, 230, 0.938);
           box-shadow: 0px 0.5px 2px 0px rgba(231, 230, 230, 0.938);
+  position: -webkit-sticky;
+  position: sticky;
 }
 
 .Navbar .brandLogo {
@@ -341,7 +344,7 @@ table {
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
     position: absolute;
-    margin-top: 4em;
+    margin-top: 4.5em;
     width: 100%;
     height: 100vh;
     -webkit-backdrop-filter: blur(1rem);
@@ -537,6 +540,12 @@ p {
   }
 }
 
+.MovieDetail {
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+}
+
 .MovieDetail .back-cover {
   z-index: -1;
   display: -ms-grid;
@@ -554,7 +563,7 @@ p {
   position: absolute;
   width: 100%;
   margin: 18rem 0rem 5rem 0rem;
-  padding: 5em 2em;
+  padding: 3em 1em;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;

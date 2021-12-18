@@ -1,4 +1,6 @@
 .MovieDetail {
+  width: 100%;
+  display: grid;
   .back-cover {
     z-index: -1;
     display: grid;
@@ -13,7 +15,7 @@
     position: absolute;
     width: 100%;
     margin: 18rem 0rem 5rem 0rem;
-    padding: 5em 2em;
+    padding: 3em 1em;
     height: fit-content;
     background: $blackGlassColor;
     justify-items: center;
@@ -36,7 +38,6 @@
       display: grid;
       max-width: 50em;
       margin: 1em 0;
-
       backdrop-filter: blur(2rem);
 
       h5 {

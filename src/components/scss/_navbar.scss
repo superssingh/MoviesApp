@@ -4,7 +4,7 @@
   position: fixed;
   width: 100%;
   height: wrap;
-  top: 0;
+  top: 1;
   div {
     width: inherit;
     position: -webkit-sticky;
@@ -17,13 +17,15 @@
   display: flex;
   width: 100%;
   height: $height;
+  top: 0;
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
   backdrop-filter: blur(1rem);
   background: $navBarColor;
   box-shadow: 0px 0.5px 2px 0px rgba(231, 230, 230, 0.938);
-  // overflow: hidden;
+  position: -webkit-sticky;
+  position: sticky;
 
   .brandLogo {
     width: wrap;
