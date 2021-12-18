@@ -4,28 +4,31 @@
   position: fixed;
   width: 100%;
   height: wrap;
-  top: 1;
   div {
     width: inherit;
     position: -webkit-sticky;
     position: sticky;
+    top: 0;
   }
 }
 
 .Navbar {
   z-index: 5;
   display: flex;
+  position: -webkit-sticky;
+  position: sticky;
   width: 100%;
   height: $height;
+  position: -webkit-sticky;
+  position: sticky;
   top: 0;
+
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
   backdrop-filter: blur(1rem);
   background: $navBarColor;
   box-shadow: 0px 0.5px 2px 0px rgba(231, 230, 230, 0.938);
-  position: -webkit-sticky;
-  position: sticky;
 
   .brandLogo {
     width: wrap;
