@@ -24,7 +24,7 @@ const MovieDetails = (props) => {
     return function cleanup() {
       abortController.abort();
     };
-  }, [id, movies]);
+  }, []);
 
   const handleVideo = async (id) => {
     const { data } = await axios.get(TagNames.getVideoKey(id));
