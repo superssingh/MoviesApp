@@ -11,8 +11,7 @@ const MovieDetails = (props) => {
 
   useEffect(() => {
     const abortController = new AbortController();
-
-    async function fetchData(id, { signal }) {
+    async function fetchData({ signal }) {
       // You can await here
       try {
         const selectedMovie = await movies.filter((m) => m.id === parseInt(id));
@@ -22,10 +21,7 @@ const MovieDetails = (props) => {
         console.log("Error: ", ex);
       }
     }
-    if (id) {
-      fetchData(id, abortController.signal);
-    }
-
+    fetchData(id, abortController.signal);
     return function cleanup() {
       abortController.abort();
     };
@@ -41,6 +37,10 @@ const MovieDetails = (props) => {
     setVideoLink(videoLink);
     setVideoStatus(video);
   };
+
+  // handlePage = () => {
+  //   this.props.history.replace("/");
+  // };
 
   console.log(movie);
   return (

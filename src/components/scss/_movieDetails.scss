@@ -1,44 +1,58 @@
 .MovieDetail {
   width: 100%;
+  height: 100vh;
   display: grid;
+  position: absolute;
+  div {
+    display: flex;
+    justify-content: center;
+    width: inherit;
+  }
   .back-cover {
-    z-index: -1;
-    display: grid;
+    z-index: 0;
+    width: 100%;
+    display: flex;
     position: absolute;
     background-repeat: no-repeat;
     background-size: cover;
-    width: 100%;
-    height: 100vh;
   }
   .MovieInfo {
     display: grid;
-    position: absolute;
-    width: 100%;
-    margin: 18rem 0rem 5rem 0rem;
-    padding: 3em 1em;
-    height: fit-content;
-    background: $blackGlassColor;
+    position: relative;
+    justify-content: center;
+    max-width: 900px;
+    margin-top: 20em;
+    padding: 10% 5%;
+    border-radius: 1em;
+    background: $GlassColor;
     justify-items: center;
-    backdrop-filter: blur(1.5rem);
+    backdrop-filter: blur(1rem);
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.865);
 
     h1 {
-      padding: 12px;
+      padding: 10px 12px;
       font-size: 1.5em;
       font-weight: bold;
-      color: white;
+      color: $whiteColor;
+      background: $secondaryColor;
+      border-radius: 1em;
+      margin: -1em 0 1em 0;
+      box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.865);
     }
     .front-cover {
-      margin-top: -12em;
       border-radius: 5px;
       width: 80%;
       max-width: 750px;
-      box-shadow: 0px 1px 5px 2px rgba(0, 0, 0, 0.92);
+      box-shadow: 0px 1px 10px 2px rgba(0, 0, 0, 0.865);
     }
     .overview {
       display: grid;
       max-width: 50em;
       margin: 1em 0;
       backdrop-filter: blur(2rem);
+      background: $cardColor;
+      border-radius: 1em;
+      box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.947);
 
       h5 {
         margin-top: -1em;
@@ -51,7 +65,7 @@
       }
       p {
         padding: 1em 2em;
-        color: rgb(193, 192, 192);
+        color: rgb(40, 39, 39);
         line-height: 1.5;
         font-size: 1em;
       }
@@ -61,30 +75,43 @@
       position: relative;
       h4 {
         width: fit-content;
-        padding: 10px 20px;
+        padding: 15px 20px;
         margin: 5px;
         color: #fff;
         background: $GradientRedColor;
-        border-radius: 50%;
+        border-radius: 25px;
       }
     }
     .videoPlayer {
       margin-top: 10px;
-      display: flexbox;
       width: 100%;
       height: 100%;
       justify-content: center;
       iframe {
-        width: 560px;
-        height: 340px;
+        width: 800px;
+        height: 450px;
+        border-radius: 1rem;
+        box-shadow: 0px 0px 10px 1px rgb(27, 27, 27);
       }
 
       @include media("<tablet") {
         iframe {
-          width: 360px;
-          height: 240px;
+          width: 85%;
+          height: 250px;
         }
       }
+    }
+  }
+
+  @include media("<tablet") {
+    .front-cover {
+      margin-top: -10em;
+    }
+  }
+
+  @include media(">tablet") {
+    .front-cover {
+      margin-top: -20em;
     }
   }
 }

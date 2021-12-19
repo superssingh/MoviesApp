@@ -8,23 +8,19 @@ import MovieContext from "../js/contexts/movieContext";
 const Home = () => {
   const { currentUser } = useContext(UserContext);
   const { movies, addMovies } = useContext(MovieContext);
-  const imagepath = TagNames.getImagePath();
 
   useEffect(() => {
     const abortController = new AbortController();
-    if (movies.length === 0) {
-      async function fetchData(URL, { signal }) {
-        // You can await here
-        const { data } = await axios.get(URL);
-        addMovies(data.results);
-      }
-      fetchData(TagNames.getURL(), abortController.signal);
-      return function cleanup() {
-        abortController.abort();
-      };
-    } else {
-      console.log("data already fetched");
+
+    async function fetchData({ signal }) {
+      // You can await here
+      const { data } = await axios.get(TagNames.getURL());
+      addMovies(data.results);
     }
+    fetchData(abortController.signal);
+    return function cleanup() {
+      abortController.abort();
+    };
   }, []); // Or [] if effect doesn't need props or state
 
   if (movies.length === 0) {

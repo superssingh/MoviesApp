@@ -149,9 +149,9 @@ table {
   z-index: 3;
   display: -ms-grid;
   display: grid;
-  position: fixed;
   width: 100%;
   height: wrap;
+  position: fixed;
 }
 
 .Navigation div {
@@ -166,25 +166,23 @@ table {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  position: -webkit-sticky;
-  position: sticky;
   width: 100%;
   height: 4em;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 1rem;
-  -webkit-backdrop-filter: blur(1rem);
-          backdrop-filter: blur(1rem);
+  padding: 1em;
+  -webkit-backdrop-filter: blur(1em);
+          backdrop-filter: blur(1em);
   background: rgba(255, 255, 255, 0.692);
   -webkit-box-shadow: 0px 0.5px 2px 0px rgba(231, 230, 230, 0.938);
           box-shadow: 0px 0.5px 2px 0px rgba(231, 230, 230, 0.938);
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
 }
 
 .Navbar .brandLogo {
@@ -301,6 +299,13 @@ table {
   }
   .Navbar {
     width: auto;
+    height: 4em;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
   .hamburger-close {
     position: relative;
@@ -395,8 +400,8 @@ table {
 }
 
 #signin {
-  background: -webkit-gradient(linear, left top, right top, from(#08164f), color-stop(#0cff96), to(#15086b));
-  background: linear-gradient(90deg, #08164f, #0cff96, #15086b);
+  background: -webkit-gradient(linear, left top, right top, from(#08164f), color-stop(#08d57c), to(#15086b));
+  background: linear-gradient(90deg, #08164f, #08d57c, #15086b);
   font-weight: 500;
   color: white;
   padding: 1em;
@@ -416,8 +421,8 @@ table {
 }
 
 #signup {
-  background: -webkit-gradient(linear, left top, right top, from(#1b1b1b), color-stop(#e205a4), to(#26086b));
-  background: linear-gradient(90deg, #1b1b1b, #e205a4, #26086b);
+  background: -webkit-gradient(linear, left top, right top, from(#1b1b1b), color-stop(#c70a92), to(#1b1b1b));
+  background: linear-gradient(90deg, #1b1b1b, #c70a92, #1b1b1b);
   color: white;
   font-weight: 500;
   padding: 1em;
@@ -437,8 +442,8 @@ table {
 }
 
 #logout {
-  background: -webkit-gradient(linear, left top, right top, from(#1b1b1b), color-stop(#e205a4), to(#26086b));
-  background: linear-gradient(90deg, #1b1b1b, #e205a4, #26086b);
+  background: -webkit-gradient(linear, left top, right top, from(#1b1b1b), color-stop(#c70a92), to(#1b1b1b));
+  background: linear-gradient(90deg, #1b1b1b, #c70a92, #1b1b1b);
   color: white;
   font-weight: 500;
   padding: 1em;
@@ -545,52 +550,71 @@ p {
 
 .MovieDetail {
   width: 100%;
-  display: -ms-grid;
-  display: grid;
-}
-
-.MovieDetail .back-cover {
-  z-index: -1;
+  height: 100vh;
   display: -ms-grid;
   display: grid;
   position: absolute;
+}
+
+.MovieDetail div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: inherit;
+}
+
+.MovieDetail .back-cover {
+  z-index: 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
   background-repeat: no-repeat;
   background-size: cover;
-  width: 100%;
-  height: 100vh;
 }
 
 .MovieDetail .MovieInfo {
   display: -ms-grid;
   display: grid;
-  position: absolute;
-  width: 100%;
-  margin: 18rem 0rem 5rem 0rem;
-  padding: 3em 1em;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  background: -webkit-gradient(linear, right top, left top, from(#010101c6), color-stop(#0c0c0cdd), to(#090909ad));
-  background: linear-gradient(-90deg, #010101c6, #0c0c0cdd, #090909ad);
+  position: relative;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  max-width: 900px;
+  margin-top: 20em;
+  padding: 10% 5%;
+  border-radius: 1em;
+  background: rgba(255, 255, 255, 0.692);
   justify-items: center;
-  -webkit-backdrop-filter: blur(1.5rem);
-          backdrop-filter: blur(1.5rem);
+  -webkit-backdrop-filter: blur(1rem);
+          backdrop-filter: blur(1rem);
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.865);
+          box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.865);
 }
 
 .MovieDetail .MovieInfo h1 {
-  padding: 12px;
+  padding: 10px 12px;
   font-size: 1.5em;
   font-weight: bold;
-  color: white;
+  color: rgba(252, 252, 252, 0.981);
+  background: -webkit-gradient(linear, right top, left top, from(#044322), color-stop(#09b84c), to(#044322));
+  background: linear-gradient(-90deg, #044322, #09b84c, #044322);
+  border-radius: 1em;
+  margin: -1em 0 1em 0;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.865);
+          box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.865);
 }
 
 .MovieDetail .MovieInfo .front-cover {
-  margin-top: -12em;
   border-radius: 5px;
   width: 80%;
   max-width: 750px;
-  -webkit-box-shadow: 0px 1px 5px 2px rgba(0, 0, 0, 0.92);
-          box-shadow: 0px 1px 5px 2px rgba(0, 0, 0, 0.92);
+  -webkit-box-shadow: 0px 1px 10px 2px rgba(0, 0, 0, 0.865);
+          box-shadow: 0px 1px 10px 2px rgba(0, 0, 0, 0.865);
 }
 
 .MovieDetail .MovieInfo .overview {
@@ -600,6 +624,11 @@ p {
   margin: 1em 0;
   -webkit-backdrop-filter: blur(2rem);
           backdrop-filter: blur(2rem);
+  background: -webkit-gradient(linear, left bottom, left top, from(#c2c2c2), color-stop(#fffffff1), to(#fffffff3));
+  background: linear-gradient(0deg, #c2c2c2, #fffffff1, #fffffff3);
+  border-radius: 1em;
+  -webkit-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.947);
+          box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.947);
 }
 
 .MovieDetail .MovieInfo .overview h5 {
@@ -608,14 +637,14 @@ p {
   font-size: 1.2em;
   color: whitesmoke;
   justify-self: flex-start;
-  background: -webkit-gradient(linear, left top, right top, from(#1b1b1b), color-stop(#e205a4), to(#26086b));
-  background: linear-gradient(90deg, #1b1b1b, #e205a4, #26086b);
+  background: -webkit-gradient(linear, left top, right top, from(#1b1b1b), color-stop(#c70a92), to(#1b1b1b));
+  background: linear-gradient(90deg, #1b1b1b, #c70a92, #1b1b1b);
   border-radius: 0 50% 50% 0;
 }
 
 .MovieDetail .MovieInfo .overview p {
   padding: 1em 2em;
-  color: #c1c0c0;
+  color: #282727;
   line-height: 1.5;
   font-size: 1em;
 }
@@ -631,17 +660,16 @@ p {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  padding: 10px 20px;
+  padding: 15px 20px;
   margin: 5px;
   color: #fff;
-  background: -webkit-gradient(linear, left top, right top, from(#1b1b1b), color-stop(#e205a4), to(#26086b));
-  background: linear-gradient(90deg, #1b1b1b, #e205a4, #26086b);
-  border-radius: 50%;
+  background: -webkit-gradient(linear, left top, right top, from(#1b1b1b), color-stop(#c70a92), to(#1b1b1b));
+  background: linear-gradient(90deg, #1b1b1b, #c70a92, #1b1b1b);
+  border-radius: 25px;
 }
 
 .MovieDetail .MovieInfo .videoPlayer {
   margin-top: 10px;
-  display: flexbox;
   width: 100%;
   height: 100%;
   -webkit-box-pack: center;
@@ -650,14 +678,29 @@ p {
 }
 
 .MovieDetail .MovieInfo .videoPlayer iframe {
-  width: 560px;
-  height: 340px;
+  width: 800px;
+  height: 450px;
+  border-radius: 1rem;
+  -webkit-box-shadow: 0px 0px 10px 1px #1b1b1b;
+          box-shadow: 0px 0px 10px 1px #1b1b1b;
 }
 
 @media (max-width: 859px) {
   .MovieDetail .MovieInfo .videoPlayer iframe {
-    width: 360px;
-    height: 240px;
+    width: 85%;
+    height: 250px;
+  }
+}
+
+@media (max-width: 859px) {
+  .MovieDetail .front-cover {
+    margin-top: -10em;
+  }
+}
+
+@media (min-width: 861px) {
+  .MovieDetail .front-cover {
+    margin-top: -20em;
   }
 }
 
