@@ -2,7 +2,10 @@ import React, { useState, useContext, useEffect } from "react";
 import MovieContext from "../js/contexts/movieContext";
 import * as TagNames from "../js/constants/constants";
 import axios from "axios";
+import { useHistory } from "react-router-dom";
+
 const MovieDetails = (props) => {
+  const history = useHistory();
   const { movies } = useContext(MovieContext);
   const id = props.match.params.id;
   const [movie, setMovie] = useState([]);
@@ -13,15 +16,25 @@ const MovieDetails = (props) => {
     const abortController = new AbortController();
     async function fetchData({ signal }) {
       // You can await here
-      try {
-        const selectedMovie = await movies.filter((m) => m.id === parseInt(id));
-        setMovie(selectedMovie[0]);
-        handleVideo(id);
-      } catch (ex) {
-        console.log("Error: ", ex);
+      if (movies) {
+        try {
+          const selectedMovie = await movies.filter(
+            (m) => m.id === parseInt(id)
+          );
+          if (selectedMovie[0]) {
+            setMovie(selectedMovie[0]);
+            handleVideo(id);
+          } else {
+            return history.replace("/");
+          }
+        } catch (ex) {
+          console.log("Error: ", ex);
+        }
       }
     }
-    fetchData(id, abortController.signal);
+    if (id) {
+      fetchData(id, abortController.signal);
+    }
     return function cleanup() {
       abortController.abort();
     };
@@ -37,10 +50,6 @@ const MovieDetails = (props) => {
     setVideoLink(videoLink);
     setVideoStatus(video);
   };
-
-  // handlePage = () => {
-  //   this.props.history.replace("/");
-  // };
 
   return (
     <div className="MovieDetail">

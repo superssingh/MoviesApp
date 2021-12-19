@@ -591,6 +591,9 @@ p {
   border-radius: 1em;
   background: rgba(255, 255, 255, 0.692);
   justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-backdrop-filter: blur(1rem);
           backdrop-filter: blur(1rem);
   -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.865);
@@ -599,9 +602,10 @@ p {
 
 .MovieDetail .MovieInfo h1 {
   padding: 10px 12px;
-  font-size: 1.5em;
+  font-size: 1.3em;
   font-weight: bold;
   color: rgba(252, 252, 252, 0.981);
+  text-align: center;
   background: -webkit-gradient(linear, right top, left top, from(#044322), color-stop(#09b84c), to(#044322));
   background: linear-gradient(-90deg, #044322, #09b84c, #044322);
   border-radius: 1em;

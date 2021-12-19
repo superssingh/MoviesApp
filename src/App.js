@@ -79,10 +79,11 @@ function App() {
                 <Route path="/shop" component={Shop} />
                 <Route path="/about" component={About} />
                 <Route path="/contact" component={Contact} />
-                <Route path="/not-found" component={NotFound} />
                 <Route path="/login" component={Login} />
                 <Route path="/signup" component={Signup} />
+                <Route path="/not-found" component={NotFound} />
                 <Route path="/" exact component={Home} />
+
                 <Redirect to="/not-found" />
               </Switch>
             </div>
