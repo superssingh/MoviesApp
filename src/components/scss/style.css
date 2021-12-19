@@ -146,16 +146,11 @@ table {
 *
 **/
 .Navigation {
-  z-index: 3;
+  z-index: 5;
   display: flexbox;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   width: 100%;
   height: wrap;
-  position: -webkit-sticky;
-  position: sticky;
+  position: fixed;
   top: 0;
 }
 
@@ -184,9 +179,8 @@ table {
   background: rgba(255, 255, 255, 0.692);
   -webkit-box-shadow: 0px 0.7px 2px 0px rgba(228, 227, 227, 0.938);
           box-shadow: 0px 0.7px 2px 0px rgba(228, 227, 227, 0.938);
-  padding: 1rem;
-  position: -webkit-sticky;
-  position: sticky;
+  padding: 1em;
+  position: fixed;
   top: 0;
 }
 
@@ -305,23 +299,28 @@ table {
   .Navbar {
     width: auto;
     height: 4em;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
   }
   .hamburger-close {
     position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    justify-self: flex-end;
+    justify-self: end;
     -ms-flex-item-align: center;
         align-self: center;
-    width: 1.5rem;
-    height: 1.5rem;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    width: 2em;
+    height: 2em;
   }
   .hamburger-close .hamburger_lines {
     position: relative;
@@ -716,8 +715,9 @@ p {
 }
 
 body {
-  display: -ms-grid;
-  display: grid;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   position: relative;
   width: 100%;
   font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
@@ -732,11 +732,12 @@ body {
   width: 100%;
   display: -ms-grid;
   display: grid;
-  position: absolute;
+  position: relative;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 1rem;
+  margin-top: 4rem;
+  padding: 0.5rem;
 }
 
 .container h1,
