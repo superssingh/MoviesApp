@@ -736,11 +736,11 @@ body {
   width: 100%;
   display: -ms-grid;
   display: grid;
-  position: relative;
+  position: absolute;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-top: 4rem;
+  margin-top: 5rem;
   padding: 0.5rem;
 }
 
@@ -800,30 +800,29 @@ body {
   width: fit-content;
   display: -ms-grid;
   display: grid;
-  position: absolute;
-  margin-top: 10rem;
-  padding: 25px;
+  position: relative;
+  padding: 20px;
   -ms-grid-column-align: center;
       justify-self: center;
   justify-items: center;
   -webkit-backdrop-filter: blur(1rem);
           backdrop-filter: blur(1rem);
-  background: linear-gradient(45deg, #ffffffcf, #ffffffc2, #d2d2d2de);
   text-align: center;
-  border-radius: 20%;
-  -webkit-box-shadow: 0px 2px 5px 1px rgba(63, 63, 63, 0.692);
-          box-shadow: 0px 2px 5px 1px rgba(63, 63, 63, 0.692);
+  border-radius: 1rem;
+  -webkit-box-shadow: 0px 2px 5px 1px rgba(24, 24, 24, 0.899);
+          box-shadow: 0px 2px 5px 1px rgba(24, 24, 24, 0.899);
 }
 
 .Login * {
   padding: 5px;
+  color: #fff;
 }
 
 .Login h1 {
   border-radius: 10px;
   font-size: x-large;
   position: absolute;
-  top: -16px;
+  color: #088a2f;
 }
 
 .Login Button {
