@@ -42,7 +42,6 @@ const MovieDetails = (props) => {
   //   this.props.history.replace("/");
   // };
 
-  console.log(movie);
   return (
     <div className="MovieDetail">
       {movie.id && (
