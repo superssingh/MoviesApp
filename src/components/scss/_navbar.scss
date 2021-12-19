@@ -1,9 +1,12 @@
 .Navigation {
   z-index: 3;
-  display: grid;
+  display: flexbox;
   width: 100%;
   height: wrap;
-  position: fixed;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+
   div {
     width: inherit;
     position: -webkit-sticky;
@@ -19,14 +22,10 @@
   height: $height;
   justify-content: space-between;
   align-items: center;
-  padding: 1em;
   backdrop-filter: blur(1em);
   background: $navBarColor;
-  box-shadow: 0px 0.5px 2px 0px rgba(231, 230, 230, 0.938);
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-
+  box-shadow: 0px 0.7px 2px 0px rgba(228, 227, 227, 0.938);
+  padding: 1rem;
   .brandLogo {
     width: wrap;
     display: flex;
@@ -153,16 +152,13 @@
 
   .mobile-open {
     z-index: 1;
-    transition: 0.5s all ease-in-out;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     position: absolute;
-    margin-top: $height;
     width: 100%;
     height: 100vh;
     backdrop-filter: blur(1rem);
-    // background: $navBarColor;
     opacity: 1;
     align-items: flex-end;
     transform: translateY(0vh);
