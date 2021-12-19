@@ -46,9 +46,9 @@ p {
 
   @include media("<tablet") {
     .flexbox-item {
-      height: 420px;
+      height: 400px;
       img {
-        width: 320px;
+        width: 300px;
         height: 100%;
       }
     }
