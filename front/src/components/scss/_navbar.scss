@@ -1,0 +1,248 @@
+.Navigation {
+  z-index: 5;
+  display: flexbox;
+  width: 100%;
+  height: wrap;
+  position: fixed;
+  top: 0;
+
+  div {
+    width: inherit;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+  }
+}
+
+.Navbar {
+  z-index: 5;
+  display: flex;
+  width: 100%;
+  height: $height;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(1em);
+  background: $navBarColor;
+  box-shadow: 0px 0.7px 2px 0px rgba(228, 227, 227, 0.938);
+  padding: 1em;
+  position: fixed;
+  top: 0;
+  .brandLogo {
+    width: wrap;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    overflow: hidden;
+    img {
+      width: 12em;
+      height: 100%;
+      padding: 0.5rem 1rem;
+    }
+  }
+}
+
+.hamburger-close {
+  display: none;
+}
+
+.hamburger_lines,
+.hamburger_lines::before,
+.hamburger_lines::after {
+  align-self: center;
+  z-index: 1;
+  cursor: pointer;
+  width: 1.5rem;
+  height: 0.1rem;
+  right: 0;
+  background-color: $menusTextColors;
+  transition: all 0.5s ease-in-out;
+}
+.hamburger_lines::before,
+.hamburger_lines::after {
+  content: "";
+  position: absolute;
+}
+.hamburger_lines::before {
+  transform: translateY(-0.5rem);
+}
+.hamburger_lines::after {
+  transform: translateY(0.5rem);
+}
+// animation of hamburger_lines
+.hamburger-open .hamburger_lines {
+  transform: translateX(2rem);
+  background-color: transparent;
+}
+.hamburger-open .hamburger_lines::before {
+  transform: rotate(45deg) translate(-1.5rem, 1.5rem);
+}
+.hamburger-open .hamburger_lines::after {
+  transform: rotate(-45deg) translate(-1.5rem, -1.5rem);
+}
+
+@include media(">tablet") {
+  .hamburger-open {
+    display: none;
+  }
+  .mobile-open {
+    opacity: 0;
+  }
+
+  .menus {
+    display: flex;
+    align-items: center;
+    height: fit-content;
+    height: inherit;
+
+    li a {
+      font-size: 1rem;
+      padding: 1em;
+      margin: 0 1px;
+      border-radius: 0.5em;
+      color: $menusTextColors;
+      backdrop-filter: blur(1rem);
+      outline: 0;
+      &:hover,
+      &:focus,
+      &:active {
+        background: $menusColors;
+        color: $blackColor;
+        box-shadow: 0px 2px 10px 1px rgba(46, 46, 46, 0.822);
+      }
+    }
+  }
+}
+
+@include media("<tablet") {
+  .menus {
+    display: none;
+  }
+  .Navbar {
+    width: auto;
+    height: $height;
+    justify-content: space-between;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+  }
+  .hamburger-close {
+    position: relative;
+    display: flex;
+    justify-self: end;
+    align-self: center;
+    align-items: center;
+    align-content: center;
+    width: 2em;
+    height: 2em;
+    .hamburger_lines {
+      position: relative;
+      width: 1.5rem;
+    }
+  }
+
+  .hamburger-open {
+    position: relative;
+    display: flex;
+    width: 1.5rem;
+    height: 1.5rem;
+    z-index: 1;
+    cursor: pointer;
+    .hamburger_lines {
+      position: relative;
+      width: 1.5rem;
+    }
+  }
+
+  .mobile-open {
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    backdrop-filter: blur(1rem);
+    opacity: 1;
+    align-items: flex-end;
+    transform: translateY(0vh);
+    box-shadow: 0px 0px 0px 1px rgba(221, 221, 221, 0.173);
+    li {
+      width: 300px;
+      height: 100%;
+      backdrop-filter: blur(1rem);
+      background: $navBarColor;
+      // background: $transparentWhiteColor;
+      padding: 10px;
+      box-shadow: -1px 0px 0px 0px rgba(19, 19, 19, 0.39);
+      a {
+        padding: 10px;
+        display: flex;
+        justify-content: left;
+        font-size: 1rem;
+        color: $menusTextColors;
+        padding: 1rem 1rem 1rem 3rem;
+        width: 100%;
+        &:hover,
+        &:focus {
+          box-shadow: -5px 0px 0px 0px rgba(0, 215, 0, 0.92);
+        }
+      }
+    }
+  }
+}
+.mobile-close {
+  display: none;
+  opacity: 0;
+}
+
+#signin {
+  background: $GradientGreenColor;
+  font-weight: 500;
+  color: rgb(255, 255, 255);
+  padding: 1em;
+  border-radius: 0 20em;
+  overflow: hidden;
+  justify-content: center;
+  box-shadow: 0px 2px 5px 1px rgba(77, 75, 75, 0.692);
+  &:hover,
+  &:focus {
+    color: rgb(28, 28, 28);
+    background: $GradientWhiteColor;
+  }
+}
+
+#signup {
+  background: $GradientRedColor;
+  color: rgb(255, 255, 255);
+  font-weight: 500;
+  padding: 1em;
+  border-radius: 20em 0;
+  overflow: hidden;
+  justify-content: center;
+  box-shadow: 0px 2px 5px 1px rgba(77, 75, 75, 0.692);
+  &:hover,
+  &:focus {
+    color: rgb(28, 28, 28);
+    background: $GradientWhiteColor;
+  }
+}
+
+#logout {
+  background: $GradientRedColor;
+  color: rgb(255, 255, 255);
+  font-weight: 500;
+  padding: 1em;
+  border-radius: 20em;
+  overflow: hidden;
+  justify-content: center;
+  box-shadow: 0px 2px 5px 1px rgba(77, 75, 75, 0.692);
+  &:hover,
+  &:focus {
+    color: rgb(28, 28, 28);
+    background: $GradientWhiteColor;
+  }
+}
+
+#hidden {
+  display: none;
+}
