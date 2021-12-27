@@ -1,4 +1,4 @@
 # MoviesApp 
 # Developer- Santosh Singh.
 
-I am working on a fullstack react app and this is one of the testing app.
+a fullstack react app with api, blog and e-commerce feature.
