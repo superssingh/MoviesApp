@@ -15,8 +15,6 @@ import UserContext from "./components/js/contexts/userContext";
 import MovieContext from "./components/js/contexts/movieContext";
 import CartContext from "./components/js/contexts/cartContext";
 
-import "./components/scss/style.css";
-
 function App() {
   const [user, setUser] = useState({
     currentUser: {
